@@ -4,12 +4,12 @@ Following [the official tutorial in the Alchemy GitHub](https://github.com/alche
 
 ## Using Alchemy
 
-1. Alcemny and Metamask setup
-2. Initialize a project
+1. [Alchemny and Metamask setup](#alchemy-and-metamask-setup)
+2. [Initialize a project](#initialize-a-project)
 3. Write a contract in _contracts_
-4. Connect Alchemy and Metamask to the project
+4. [Connect Alchemy and Metamask to the project](#connect-alchemy-and-metamask-to-the-project)
 5. $ `truffle compile`
-6. $ Add a Deployment Script _2_deploy_contracts.js_ in _migrations_
+6. $ Add a Deployment Script [_2_deploy_contracts.js_](#2_deploy_contractsjs) in _migrations_
 7. $ `truffle migrate --network goerli`
 
 ### Alchemy and Metamask setup
@@ -31,9 +31,9 @@ Following [the official tutorial in the Alchemy GitHub](https://github.com/alche
 
 1. **IMPORTANT** Create a _.gitignore_ and add _.env_
 2. `npm i dotenv`
-3. Add a _.env_ file using the format given below
+3. Add a [_.env_](#env) file using the format given below
 4. Provide `your-api-key` and `"your-metamask-seed-phrase"` in _.env_
-5. Configure `HDWalletProvider` in _truffle_config.js_
+5. Configure `HDWalletProvider` in [_truffle_config.js_](#truffle-configjs)
 
 ## Files
 
