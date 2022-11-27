@@ -115,10 +115,10 @@ module.exports = {
       network_id: 5,
       gas: 4000000, //4M is the max
     },
-    compilers: {
-      solc: {
-        version: '0.8.0',
-      },
+  },
+  compilers: {
+    solc: {
+      version: '0.8.0',
     },
   },
 }
