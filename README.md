@@ -9,9 +9,11 @@ Following [the official tutorial in the Alchemy GitHub](https://github.com/alche
 3. Write a contract in _contracts_ called [_HelloWorld.sol_](#helloworldsol)
 4. [Connect Alchemy and Metamask to the project](#connect-alchemy-and-metamask-to-the-project)
 5. Compile the contract
-    - $ `truffle compile`
-6. $ Add a Deployment Script [_2_deploy_contracts.js_](#2_deploy_contractsjs) in _migrations_
-7. $ `truffle migrate --network goerli`
+   - $ `truffle compile`
+6. Create a new file in _migrations_ called _2_deploy_contracts.js_
+7. Add the contents of the file file here: [_2_deploy_contracts.js_](#2_deploy_contractsjs)
+8. Deploy the contract to the blockchain
+   - $ `truffle migrate --network goerli`
 
 [Go Back to steps](#using-alchemy)
 
@@ -27,37 +29,44 @@ Now you have a working contract that is deployed on Alchemy. Next you should mak
 
 [Go Back to steps](#using-alchemy)
 
-
 ### Initialize a project
 
 1. Create a folder for the project
 2. Open the project in VS Code
 3. Open ternimal
-    - `ctrl + `` (ctrl + backtick)
+   - `ctrl + `` (ctrl + backtick)
 4. Initialie a project using
-    - $ `npm init -y`
-5. $ Check if truffle is installed on your system 
-    - `npm list -g`
+   - $ `npm init -y`
+5. $ Check if truffle is installed on your system
+   - `npm list -g`
 6. If not installed then install
-    - $ `npm i -g truffle`
+   - $ `npm i -g truffle`
 7. Create a new truffle project
-    - $ `truffle init`
+   - $ `truffle init`
 8. Install wallet provider to connect to Alchemy
-    - $ `npm install @truffle/hdwallet-provider`
+   - $ `npm install @truffle/hdwallet-provider`
 
 [Go Back to steps](#using-alchemy)
-
 
 ### Connect Alchemy and Metamask to the project
 
 1. **IMPORTANT** Create a _.gitignore_ and add _.env_
 2. `npm i dotenv`
-3. Add a [_.env_](#env) file using the format given below
-4. Provide `your-api-key` and `"your-metamask-seed-phrase"` in _.env_
-5. Configure `HDWalletProvider` in [_truffle_config.js_](#truffle-configjs)
+3. To protect your secret keys add a [_.env_](#env) file in the root directory.
+4. Copy the content for [_.env_](#env) from the format given below
+5. Go to [the Alchemy dashboard](http://dashboard.alchemy.com)
+6. Click on "View Key" for the Driver Registration app
+7. Copy the "HTTPS" link
+8. Replace `API_URL` in _.env_
+9. Follow this official tutorial by MetaMask on [How to reveal your Secret Recovery Phrase](https://metamask.zendesk.com/hc/en-us/articles/360015290032-How-to-reveal-your-Secret-Recovery-Phrase)
+10. Copy the 12-word phrase
+11. Replace `MNEMONIC` in _.env_
+12. Save _.env_
+13. Open _truffle_config.js_
+14. Delete all the contnets of this file
+15. Replace the file with the contnet fo this file: [_truffle_config.js_](#truffle-configjs)
 
 [Go Back to steps](#using-alchemy)
-
 
 ## Files
 
@@ -84,15 +93,14 @@ contract HelloWorld {
 
 [Go Back to steps](#using-alchemy)
 
-
 ### _.env_
 
 ```toml
 API_URL = "https://eth-ropsten.alchemyapi.io/v2/your-api-key"
 MNEMONIC = "your-metamask-seed-phrase"
 ```
-[Go Back to steps](#using-alchemy)
 
+[Go Back to steps](#using-alchemy)
 
 ### _truffle-config.js_
 
@@ -126,7 +134,6 @@ module.exports = {
 
 [Go Back to steps](#using-alchemy)
 
-
 ### _2_deploy_contracts.js_
 
 ```js
@@ -139,4 +146,3 @@ module.exports = function (deployer) {
 ```
 
 [Go Back to steps](#using-alchemy)
-
